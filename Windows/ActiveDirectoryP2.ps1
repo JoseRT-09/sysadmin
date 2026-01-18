@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 Import-Module ActiveDirectory
 $domainName = Get-Current-DomainName
 $groups = @("group_1", "group_2")
@@ -250,10 +250,10 @@ auditpol /set /category:"Account Management" /success:enable /failure:enable
 auditpol /set /category:"Directory Service Access" /success:enable /failure:enable
 $group_1_users = Get-ADUser -Filter * -SearchBase "OU=group_1,DC=reprobados,DC=com"  
 foreach ($user in $group_1_users){
-    Set-LogonHours -Identity $($user.SamAccountName)  -TimeIn24Format @(8,14) -Monday -Tuesday -Wednesday -Thursday -Friday -Saturday -Sunday -NonSelectedDaysare NonWorkingDays
+    Set-LogonHours -Identity $($user.SamAccountName)  -TimeIn24Format @(8,14) -Monday -Tuesday -Wednesday -Thursday -Friday -Saturday -Sunday -NonSelectedDaysAre NonWorkingDays
  }
 $group_2_users = Get-ADUser -Filter * -SearchBase "OU=group_2,DC=reprobados,DC=com"  
 foreach ($user in $group_2_users){
-    Set-LogonHours -Identity $($user.SamAccountName)   -TimeIn24Format @(15..23 + 0..2) -Monday -Tuesday -Wednesday -Thursday -Friday -Saturday -Sunday -NonSelectedDaysare NonWorkingDays
+    Set-LogonHours -Identity $($user.SamAccountName)   -TimeIn24Format @(15..23 + 0..2) -Monday -Tuesday -Wednesday -Thursday -Friday -Saturday -Sunday -NonSelectedDaysAre NonWorkingDays
 }
  

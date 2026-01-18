@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 Install-WindowsFeature -Name Web-Ftp-Server -IncludeManagementTools
 Install-WindowsFeature Web-Server -IncludeManagementTools
 Import-Module WebAdministration

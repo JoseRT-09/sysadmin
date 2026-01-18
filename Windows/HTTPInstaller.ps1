@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 Clear-Host
 Set-NetFirewallProfile -Profile Domain, Public, Private -Enabled False
 Clear-Host

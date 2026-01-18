@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 $adapters = get_all_adapters
 Install-WindowsFeature -Name DNS -IncludeManagementTools
 Install-WindowsFeature -NAME RSAT-DNS-Server

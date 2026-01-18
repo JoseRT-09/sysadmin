@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 $adapters = (Get-NetAdapter | Select-Object -ExpandProperty Name)
@@ -19,9 +19,10 @@ if($choise -eq "s"){
 $domain = Read-Host -Prompt "Nombre del Dominio: "
 while (Is-Valid-DomainName -domainName $domain -eq $false) {
     $domain = Read-Host -Prompt "Nombre del Dominio: "
-    if (Is-Valid-DomainName domainName $domain) {
+    if (Is-Valid-DomainName -domainName $domain) {
         break;
     }
 }
 
-Install-ADDSForest -DomainName "reprobados.com" -DomainNetbiosName "reprobados" -InstallDNS: $true -CreateDNSDelegation: $false -DatabasePath "C:\NTDS" -SysvolPath "C:\SYSVOL" -LogPath "C:\NTDS" -Force
+$netbiosName = $domain.Split('.')[0]
+Install-ADDSForest -DomainName $domain -DomainNetbiosName $netbiosName -InstallDNS: $true -CreateDNSDelegation: $false -DatabasePath "C:\NTDS" -SysvolPath "C:\SYSVOL" -LogPath "C:\NTDS" -Force

@@ -1,4 +1,4 @@
-Import-Module Z:\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
 $serversIps = get_adapter_ip -adapter "Ethernet 2"
 $DhcpInDC=Get-DhcpServerInDC | ForEach-Object { $_.IPAddress.IPAddressToString }
 $currentDomain=Get-Current-DomainName
