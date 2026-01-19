@@ -1,4 +1,4 @@
-Import-Module C:\Users\Administrator\Desktop\Functions.psm1 -Force
+Import-Module C:\Users\Administrator\Escritorio\Functions.psm1 -Force
 Import-Module ActiveDirectory
 $domainName = Get-Current-DomainName
 $groups = @("group_1", "group_2")
